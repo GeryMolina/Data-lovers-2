@@ -1,10 +1,12 @@
-/* Manejo de data */
+window.data= {
 
-// esta es una función de ejemplo
-// puedes ver como agregamos la función a nuestro objeto global window
+  filterTypoPoke: (listOfPokemon, typePokemon) => {
+    let filterPoke= listOfPokemon.filter(element =>{
+  
+      return element.type.inclides(typePokemon);
+    })
+  
+    return filterPoke;
+  }
+}
 
-const example = () => {
-  return 'example';
-};
-
-window.example = example;
