@@ -1,10 +1,10 @@
 /* Manejo del DOM */
-let listOfPokemon='';
-dataPokemon = ()=> {
+let listOfPokemon = [];
+const dataPokemon= ()=> {
     fetch('./data/pokemon/pokemon.json')
     .then(res => res.json())
     .then(data => {
-        window.listOfPokemon= data.pokemon;
+        listOfPokemon = data.pokemon;
         
         const list= document.getElementById('listUl');
         list.innerHTML= 
@@ -16,7 +16,7 @@ dataPokemon = ()=> {
                         Numero: #${x.num}
                         Nombre: ${x.name}
                         Tipo: ${x.type} 
-                        Debilidad: ${x.weaknesses}
+                        
                     </div>    
                 </li>
                     `; 
@@ -25,7 +25,6 @@ dataPokemon = ()=> {
     .catch(error => error)
 };
 
-console.log(listOfPokemon);
 const button = document.getElementById('button');
 button.addEventListener('click', () => {
     dataPokemon()
