@@ -13,9 +13,9 @@ const dataPokemon= ()=> {
                 <li class="liItem">
                     <img class="imgRaM" src="${x.img}">
                     <div class="charData">
-                        Numero: #${x.num}
-                        Nombre: ${x.name}
-                        Tipo: ${x.type} 
+                        #${x.num}
+                         ${x.name}
+                         
                         
                     </div>    
                 </li>
@@ -28,6 +28,8 @@ const dataPokemon= ()=> {
 const button = document.getElementById('button');
 button.addEventListener('click', () => {
     dataPokemon()
+    button.style.display="none";
+    typeFilter.style.display="block";
 });
  
 
@@ -43,10 +45,8 @@ typeFilter.addEventListener ('change', ()=> {
                 <li class="liItem">
                     <img class="imgRaM" src="${x.img}">
                     <div class="charData">
-                        Numero: #${x.num}
-                        Nombre: ${x.name}
-                        Tipo: ${x.type} 
-                        Debilidad: ${x.weaknesses}
+                    #${x.num}
+                     ${x.name}
                     </div>    
                 </li>
                     `; 
